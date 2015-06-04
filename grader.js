@@ -71,7 +71,7 @@ var modeScore = function(arr){
     var ans = deleteDuplicates(maxes);
     if(ans.length===1)
         return ans[0];
-    return ans;
+    return ans.sort();
 };
 
 module.exports = {
