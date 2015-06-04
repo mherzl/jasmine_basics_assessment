@@ -4,7 +4,7 @@
   "description": "**Instructions:** Fork and clone this repository.  Create a file called `grader.js` and write the following functions inside of it.  You must have full test coverage(write a bunch of jasmine tests for each function).  This is an open-book exercise.  Feel free to refer to your notes and the jasmine docs.",
   "main": "grader.js",
   "scripts": {
-    "test": "nodemon --exec jshint *.js & nodemon --exec jasmine"
+    "test": "nodemon --exec jshint grader.js || nodemon --exec jasmine"
   },
   "jshint":{
       "ignore": [
