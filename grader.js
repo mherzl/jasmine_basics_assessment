@@ -30,12 +30,12 @@ var letterGrader = function(s) {
 };
 
 var averageScore = function(arr) {
-    if(arr.length===0){return 'error'};
+    if(arr.length===0){return 'error';}
     return arr.reduce(function(a,e){return a+e;},0) / arr.length;
 };
 
 var medianScore = function(arr) {
-    if(arr.length===0){return 'error'};
+    if(arr.length===0){return 'error';}
     var sorted = arr.sort();
     if(arr.length % 2 === 0)
         return sorted[arr.length / 2];
@@ -45,7 +45,7 @@ var medianScore = function(arr) {
 };
 
 var modeScore = function(arr){
-    if(arr.length===0){return 'error'};
+    if(arr.length===0){return 'error';}
     var count = function(x,arr){
         return arr.reduce(function(a,e){
             return e==x ? a+1 : a;
