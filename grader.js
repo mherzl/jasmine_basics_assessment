@@ -42,8 +42,41 @@ var medianScore = function(arr) {
     return 'error';
 };
 
+var modeScore = function(arr){
+    var count = function(x,arr){
+        return arr.reduce(function(a,e){
+            if(e==x)
+                return a+1;
+            return a;
+            //e==x ? a+1 : a;
+        },0);
+    };
+    var maxCount = arr.reduce(function(a,e){
+        var c = count(e,arr);
+        if(c>a)
+            return c;
+        return a;
+    },0);
+    var maxes = arr.filter(function(e){
+        return count(e,arr)===maxCount;
+    });
+    var deleteDuplicates = function(arr){
+        return arr.reduce(function(a,e){
+            if(count(e,a)>=1)
+                return a;
+            a.push(e);
+            return a;
+        },[]);
+    };
+    var ans = deleteDuplicates(maxes);
+    if(ans.length===1)
+        return ans[0];
+    return ans;
+};
+
 module.exports = {
     letterGrader: letterGrader,
     averageScore: averageScore,
-    medianScore: medianScore
+    medianScore: medianScore,
+    modeScore: modeScore
 };

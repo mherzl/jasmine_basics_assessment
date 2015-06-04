@@ -38,3 +38,18 @@ describe('medianScore',function(){
         ).toEqual(80);
     });
 });
+
+describe('mode',function(){
+    it('mode one',function(){
+        expect(
+            grader.modeScore([82, 92, 75, 91, 92, 89, 95, 100, 86])
+        ).toEqual(92);
+    });
+    it('mode arr',function(){
+        expect(
+            grader.modeScore([82, 92, 75, 91, 92, 89, 95, 100, 86, 82])
+        ).toEqual([82,92]);
+    });
+});
+
+
