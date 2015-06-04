@@ -45,21 +45,11 @@ var medianScore = function(arr) {
 var modeScore = function(arr){
     var count = function(x,arr){
         return arr.reduce(function(a,e){
-            /*
-            if(e==x)
-                return a+1;
-            return a;
-            */
             return e==x ? a+1 : a;
         },0);
     };
     var maxCount = arr.reduce(function(a,e){
         var c = count(e,arr);
-        /*
-        if(c>a)
-            return c;
-        return a;
-        */
         return c>a ? c : a;
     },0);
     var maxes = arr.filter(function(e){
@@ -67,21 +57,10 @@ var modeScore = function(arr){
     });
     var deleteDuplicates = function(arr){
         return arr.reduce(function(a,e){
-            /*
-            if(count(e,a)>=1)
-                return a;
-            a.push(e);
-            return a;
-            */
             return count(e,a)>=1 ? a : (a.push(e), a);
         },[]);
     };
     var ans = deleteDuplicates(maxes);
-    /*
-    if(ans.length===1)
-        return ans[0];
-    return ans.sort();
-    */
     return ans.length===1 ? ans[0] : ans.sort();
 };
 
