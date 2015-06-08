@@ -1,4 +1,25 @@
 var letterGrader = function(s) {
+    var firstDigit = Math.floor(s/10);
+    var secondDigit = s%10;
+    var letter;
+    if(s >= 100)
+        return 'A+';
+    if(firstDigit === 9)
+        letter = 'A';
+    else if(firstDigit === 8)
+        letter = 'B';
+    else if(firstDigit === 7)
+        letter = 'C';
+    else if(firstDigit === 6)
+        letter = 'D';
+    else
+        return 'F';
+    if(secondDigit >=8)
+        return letter + '+';
+    else if (secondDigit <=2)
+        return letter + '-';
+    return letter;
+    /*
     if(s<60)
         return 'F';
     if(s<=62)
@@ -27,6 +48,7 @@ var letterGrader = function(s) {
         return 'A+';
     else
         return 'error';
+    */
 };
 
 var averageScore = function(arr) {
